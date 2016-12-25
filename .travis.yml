@@ -19,7 +19,8 @@ install:
 
 before_script:
 - composer run-script post-root-package-install
-- mysql -u root -e 'CREATE DATABASE IF NOT EXISTS flarum;'
+- mysql -u root -e "CREATE DATABASE IF NOT EXISTS flarum;"
+- mysql -u root -e "GRANT ALL ON flarum.* TO 'flarum'@'localhost' IDENTIFIED BY 'flarum';"
 
 script:
 - php vendor/bin/phpcs

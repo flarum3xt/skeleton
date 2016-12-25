@@ -109,7 +109,7 @@ Vagrant.configure("2") do |config|
 
     # Customize the amount of memory on the VM:
     vb.cpus = 1
-    vb.memory = "1024"
+    vb.memory = "512"
 
     # Auto update vbguest if plugin "vagrant-vbguest" is installed
     if Vagrant.has_plugin?("vagrant-vbguest") then

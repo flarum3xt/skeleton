@@ -46,7 +46,7 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "php -r \"file_exists('config.php') || copy('config.php.dist', 'config.php');\""
+      "php -r \"file_exists('config/app.php') || copy('config/app.php.dist', 'config/app.php');\""
     ]
   },
   "config": {

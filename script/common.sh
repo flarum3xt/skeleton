@@ -1,8 +1,12 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 
-[[ ! -z $cf_hostname ]] && export cf_hostname="flarum.dev"
-[[ ! -z $cf_timezone ]] && export cf_timezone="UTC"
+# Set default value
+#   cf_hostname = flarum.dev
+#   cf_timezone = UTC
+
+cf_hostname=${cf_hostname:-flarum.dev}
+cf_timezone=${cf_timezone:-UTC}
 
 echo ">> Setting server's hostname"
 sudo hostnamectl set-hostname $cf_hostname

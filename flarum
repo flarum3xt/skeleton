@@ -5,5 +5,9 @@ define('FLARUM_START', microtime(true));
 require __DIR__ . '/vendor/autoload.php';
 
 $server = new Flarum\Console\Server(__DIR__, __DIR__ . '/public');
-$server->setConfig(require __DIR__ . '/config/app.php');
+
+//if (file_exists(__DIR__ . '/config/app.php')) {
+//    $server->setConfig(require __DIR__ . '/config/app.php.bak');
+//}
+
 $server->listen();

@@ -1,12 +1,17 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 
-[[ ! -z $cf_http_port ]]  && export cf_http_port=80
-[[ ! -z $cf_http_user ]]  && export cf_http_user="www-data"
-[[ ! -z $cf_http_group ]] && export cf_http_group="www-data"
+# Set default value
+#   cf_http_port  = 80
+#   cf_http_user  = www-data
+#   cf_http_group = www-data
+
+cf_http_port=${cf_http_port:-80}
+cf_http_user=${cf_http_user:-www-data}
+cf_http_group=${cf_http_group:-www-data}
 
 echo ">> Install PHP7.0"
-sudo apt-get install -y php-fpm php-cli php-common php-mbstring php-xml php-curl php-mcrypt php-pdo php-mysqlnd php-redis
+sudo apt-get install -y php-fpm php-cli php-common php-mbstring php-xml php-curl php-mcrypt php-pdo php-mysqlnd php-redis php-gd
 sudo systemctl start php7.0-fpm
 sudo systemctl enable php7.0-fpm
 

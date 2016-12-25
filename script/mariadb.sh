@@ -1,9 +1,14 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 
-[[ ! -z $cf_mariadb_root_password ]] && export cf_mariadb_root_password="rootpass"
-[[ ! -z $cf_mariadb_port ]]          && export cf_mariadb_port=3306
-[[ ! -z $cf_mariadb_remote_access ]] && export cf_mariadb_remote_access=true
+# Set default value
+#   cf_mariadb_root_password = rootpass
+#   cf_mariadb_port          = 3306
+#   cf_mariadb_remote_access = false
+
+cf_mariadb_root_password=${cf_mariadb_root_password:-rootpass}
+cf_mariadb_port=${cf_mariadb_port:-3306}
+cf_mariadb_remote_access=${cf_mariadb_remote_access:-false}
 
 # install mariadb
 echo ">> Install MariaDB"

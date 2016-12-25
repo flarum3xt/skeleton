@@ -6,6 +6,7 @@ phpcs.xml
 vendor
 storage
 node_modules
+.vagrant
 
 
 # IDE and editor specific files #
@@ -24,3 +25,4 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *.mo
+*.log

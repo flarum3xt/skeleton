@@ -39,7 +39,7 @@ Requirements
 TODO
 ---
 - [ ] Write [README](README.md) document
-- [ ] Integrate [Composer][composer] and publish to https://packagist.org
+- [x] Integrate [Composer][composer] and publish to https://packagist.org
 - [ ] Refactor project constructor
 - [ ] Integrate [PHPCS][phpcs] to check coding style
 - [ ] Integrate [PHPUnit][phpunit] and write some unit test scripts

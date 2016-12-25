@@ -2,8 +2,12 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-[[ ! -z $cf_redis_port ]]          && export cf_redis_port=3306
-[[ ! -z $cf_redis_remote_access ]] && export cf_redis_remote_access=true
+# Set default value
+#   cf_redis_port          = 6379
+#   cf_redis_remote_access = false
+
+cf_redis_port=${cf_redis_port:-6379}
+cf_redis_remote_access=${cf_redis_remote_access:-false}
 
 echo ">> Install Redis"
 sudo apt-get install -y redis-server
