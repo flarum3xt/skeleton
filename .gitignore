@@ -1,6 +1,6 @@
 # User specific & automatically generated files #
 #################################################
-config.php
+config/app.php
 phpunit.xml
 phpcs.xml
 vendor
